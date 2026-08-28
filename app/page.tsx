@@ -494,7 +494,7 @@ export default function Home() {
       </div>
 
     <main
-      className={`site-shell${hasEntered ? " is-revealed" : ""}`}
+      className={`site-shell${hasEntered ? " is-revealed" : ""}${menuOpen ? " has-menu-open" : ""}`}
       aria-hidden={!hasEntered}
       inert={!hasEntered}
     >
