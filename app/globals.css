@@ -23,6 +23,10 @@
   --paper: #f2f0e9;
   --line: rgba(242, 240, 233, 0.32);
   --rebel-pink: #f2231b;
+  --ink-stroke-width: 7px;
+  --ink-flecks-width: 3px;
+  --ink-drip-width: 4px;
+  --ink-shadow-blur: 0.8px;
 }
 
 * {
@@ -1363,18 +1367,18 @@ a:focus-visible {
 .ink-frame-stroke {
   fill: none;
   stroke: #050505;
-  stroke-width: 7px;
+  stroke-width: var(--ink-stroke-width);
   stroke-linecap: round;
   stroke-linejoin: round;
   vector-effect: non-scaling-stroke;
-  filter: drop-shadow(0 0 0.8px rgba(255, 255, 255, 0.88));
+  filter: drop-shadow(0 0 var(--ink-shadow-blur) rgba(255, 255, 255, 0.88));
   animation: ink-frame-in 360ms cubic-bezier(0.22, 1, 0.36, 1) both;
 }
 
 .ink-frame-flecks {
   fill: none;
   stroke: #050505;
-  stroke-width: 3px;
+  stroke-width: var(--ink-flecks-width);
   stroke-linecap: round;
   stroke-dasharray: 1 12;
   vector-effect: non-scaling-stroke;
@@ -1393,7 +1397,7 @@ a:focus-visible {
 .ink-drip {
   fill: none;
   stroke: #050505;
-  stroke-width: 4px;
+  stroke-width: var(--ink-drip-width);
   stroke-linecap: round;
   vector-effect: non-scaling-stroke;
 }

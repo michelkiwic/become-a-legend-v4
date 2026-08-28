@@ -1,6 +1,6 @@
 "use client";
 
-import { useRef, useState } from "react";
+import { useEffect, useRef, useState } from "react";
 
 type Category = {
   id: string;
@@ -392,6 +392,30 @@ export default function Home() {
   const activeCategory = categories.find((category) => category.id === activeId);
   const detailCategory = categories.find((category) => category.id === detailId);
   const activeDetailContent = detailId ? detailContent[detailId] : null;
+
+  useEffect(() => {
+    const updateInkWeight = () => {
+      // Browser zoom changes the ratio between the browser window and the CSS viewport.
+      // Counter-scale only the drawn SVG ink so it keeps its 100% zoom visual weight.
+      const windowRatio = window.outerWidth / window.innerWidth;
+      const zoom = Math.round(windowRatio * 4) / 4;
+      const scale = zoom >= 1.25 ? 1 / zoom : 1;
+
+      document.documentElement.style.setProperty("--ink-stroke-width", `${7 * scale}px`);
+      document.documentElement.style.setProperty("--ink-flecks-width", `${3 * scale}px`);
+      document.documentElement.style.setProperty("--ink-drip-width", `${4 * scale}px`);
+      document.documentElement.style.setProperty("--ink-shadow-blur", `${0.8 * scale}px`);
+    };
+
+    updateInkWeight();
+    window.addEventListener("resize", updateInkWeight);
+    window.visualViewport?.addEventListener("resize", updateInkWeight);
+
+    return () => {
+      window.removeEventListener("resize", updateInkWeight);
+      window.visualViewport?.removeEventListener("resize", updateInkWeight);
+    };
+  }, []);
 
   const showDetail = (id: string) => {
     if (detailExitTimer.current !== null) {
