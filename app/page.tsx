@@ -498,20 +498,6 @@ export default function Home() {
       aria-hidden={!hasEntered}
       inert={!hasEntered}
     >
-      <header className="masthead">
-        <button
-          className="wordmark"
-          type="button"
-          aria-label="Yoshi und Moshi – zum Ausstellungsmodell"
-          onClick={() => {
-            window.location.assign(window.location.pathname);
-          }}
-        >
-          <span className="wordmark-main">YOSHI<span>+</span>MOSHI</span>
-          <span className="wordmark-subtitle">Become a Legend</span>
-        </button>
-      </header>
-
       <section className="model-section" id="model" aria-label="Interactive exhibition model">
         <div className="exhibition-layout">
           <div className="model-column">

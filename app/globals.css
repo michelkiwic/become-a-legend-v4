@@ -558,55 +558,6 @@ a:focus-visible {
   opacity: 1;
 }
 
-.masthead {
-  position: relative;
-  z-index: 31;
-  min-height: 86px;
-  display: grid;
-  grid-template-columns: 1fr;
-  align-items: center;
-  border-bottom: 1px solid var(--line);
-  text-transform: uppercase;
-}
-
-.wordmark {
-  display: flex;
-  width: max-content;
-  padding: 0;
-  border: 0;
-  flex-direction: column;
-  align-items: center;
-  gap: 4px;
-  background: transparent;
-  color: var(--paper);
-  cursor: pointer;
-  text-decoration: none;
-  justify-self: center;
-}
-
-.wordmark-main {
-  color: var(--rebel-pink);
-  font-size: clamp(1.2rem, 2.1vw, 2.3rem);
-  font-weight: 900;
-  letter-spacing: -0.08em;
-  line-height: 0.88;
-}
-
-.wordmark-main > span {
-  display: inline-block;
-  margin: 0 0.12em;
-  font-weight: 400;
-}
-
-.wordmark-subtitle {
-  color: var(--paper);
-  font-size: clamp(0.64rem, 0.82vw, 0.9rem);
-  font-weight: 900;
-  letter-spacing: 0.12em;
-  line-height: 1;
-  text-transform: uppercase;
-}
-
 .exhibition-title {
   display: flex;
   padding: 0;
@@ -624,8 +575,6 @@ a:focus-visible {
   text-transform: inherit;
 }
 
-.wordmark:hover .wordmark-main,
-.wordmark:focus-visible .wordmark-main,
 .exhibition-title:hover span:first-child,
 .exhibition-title:focus-visible span:first-child {
   color: var(--rebel-pink);
@@ -651,13 +600,15 @@ a:focus-visible {
   border: 1px solid rgba(242, 240, 233, 0.28);
   background: transparent;
   cursor: pointer;
+  grid-template-rows: repeat(3, 4px);
+  align-content: center;
+  row-gap: 10px;
 }
 
 .menu-toggle > span {
   display: block;
   width: 100%;
   height: 4px;
-  align-self: center;
   background: var(--paper);
   transform-origin: center;
   transition: transform 220ms ease, opacity 180ms ease;
@@ -821,7 +772,7 @@ a:focus-visible {
 
 .model-column {
   position: relative;
-  width: min(100%, calc((100svh - 182px) * 4 / 3));
+  width: min(100%, calc((100svh - 72px) * 4 / 3));
   margin: 0 auto;
   container-type: inline-size;
   container-name: model-stage;
@@ -834,8 +785,16 @@ a:focus-visible {
   right: clamp(6px, 0.62cqw, 10px);
   width: clamp(58px, 7.08cqw, 92px);
   height: clamp(53px, 6.46cqw, 84px);
+  padding: clamp(10px, 1.23cqw, 16px);
+  grid-template-rows: repeat(3, clamp(3px, 0.31cqw, 4px));
+  row-gap: clamp(5px, 0.77cqw, 10px);
   background: rgba(10, 10, 10, 0.88);
   backdrop-filter: blur(5px);
+}
+
+.model-menu-toggle > span {
+  height: 100%;
+  min-height: 3px;
 }
 
 .model-frame {
@@ -1518,7 +1477,7 @@ a:focus-visible {
 
 .category-index {
   display: grid;
-  width: min(100%, calc((100svh - 182px) * 4 / 3));
+  width: min(100%, calc((100svh - 72px) * 4 / 3));
   margin: 0 auto;
   grid-template-columns: repeat(6, minmax(0, 1fr));
   border-top: 1px solid var(--line);
@@ -1588,7 +1547,7 @@ a:focus-visible {
 
 .closeup-grid {
   display: grid;
-  width: min(100%, calc((100svh - 182px) * 4 / 3));
+  width: min(100%, calc((100svh - 72px) * 4 / 3));
   margin: 0 auto;
   padding: 3px;
   grid-template-columns: repeat(6, minmax(0, 1fr));
@@ -1982,11 +1941,6 @@ a:focus-visible {
 
   .site-shell {
     padding: 0 10px;
-  }
-
-  .masthead {
-    min-height: 72px;
-    grid-template-columns: 1fr;
   }
 
   .exhibition-title {
