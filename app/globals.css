@@ -1829,11 +1829,11 @@ a:focus-visible {
 @keyframes ink-frame-in {
   from {
     opacity: 0;
-    stroke-width: 1px;
+    stroke-width: calc(var(--ink-stroke-width) * 0.15);
   }
   to {
     opacity: 1;
-    stroke-width: 7px;
+    stroke-width: var(--ink-stroke-width);
   }
 }
 
