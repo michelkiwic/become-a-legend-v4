@@ -1005,6 +1005,12 @@ a:focus-visible {
   background: #fff;
 }
 
+.fourth-wall-media-cell-motion {
+  display: grid;
+  place-items: center;
+  padding: clamp(18px, 3cqw, 38px) clamp(10px, 1.5cqw, 20px);
+}
+
 .fourth-wall-image {
   display: block;
   width: 100%;
@@ -1015,6 +1021,7 @@ a:focus-visible {
 }
 
 .fourth-wall-image-motion {
+  object-fit: contain;
   transform-origin: center;
   animation: fourth-wall-image-motion 5.2s ease-in-out infinite;
 }
@@ -1132,6 +1139,16 @@ a:focus-visible {
 .detail-text-below > .detail-text-section {
   max-width: 58em;
   margin-inline: auto;
+}
+
+.detail-text-below .detail-text-below-kicker {
+  max-width: 58em;
+  margin: 0 auto clamp(18px, 2.4cqw, 30px);
+  font-size: clamp(0.7rem, 1cqw, 0.82rem);
+  font-weight: 900;
+  letter-spacing: 0.16em;
+  line-height: 1.2;
+  text-transform: uppercase;
 }
 
 .detail-text-below h2 {
