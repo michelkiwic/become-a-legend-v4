@@ -539,7 +539,7 @@ export default function Home() {
     >
       <section className="model-section" id="model" aria-label="Interactive exhibition model">
         <div className="exhibition-layout">
-          <div className="model-column">
+          <div className={`model-column${detailId === "06" ? " has-fourth-wall-detail" : ""}`}>
             <button
               className={`menu-toggle model-menu-toggle${menuOpen ? " is-open" : ""}`}
               type="button"
@@ -624,18 +624,22 @@ export default function Home() {
                   <p className="detail-kicker">{activeDetailContent.kicker}</p>
                 </header>
                 <div className="fourth-wall-media">
-                  <img
-                    className="fourth-wall-image fourth-wall-image-motion"
-                    src="yoshi-moshi-model.jpg"
-                    alt="Das Yoshi und Moshi Ausstellungsmodell in Bewegung"
-                    draggable={false}
-                  />
-                  <img
-                    className="fourth-wall-image fourth-wall-image-still"
-                    src={fourthWallStill}
-                    alt="Zufällig ausgewähltes stilles Yoshi und Moshi Motiv"
-                    draggable={false}
-                  />
+                  <div className="fourth-wall-media-cell">
+                    <img
+                      className="fourth-wall-image fourth-wall-image-still"
+                      src="yoshi-moshi-model.jpg"
+                      alt="Das Yoshi und Moshi Ausstellungsmodell"
+                      draggable={false}
+                    />
+                  </div>
+                  <div className="fourth-wall-media-cell fourth-wall-media-cell-motion">
+                    <img
+                      className="fourth-wall-image fourth-wall-image-motion"
+                      src={fourthWallStill}
+                      alt="Zufällig ausgewähltes bewegtes Yoshi und Moshi Motiv"
+                      draggable={false}
+                    />
+                  </div>
                 </div>
               </div>
             ) : detailId === "07" ? (

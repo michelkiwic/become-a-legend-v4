@@ -803,6 +803,17 @@ a:focus-visible {
   right: 14px;
 }
 
+.model-column.has-fourth-wall-detail .model-menu-toggle,
+.category-detail-06 .detail-back {
+  top: clamp(18px, 1.7cqw, 26px);
+}
+
+@media (min-width: 761px) {
+  .model-column.has-fourth-wall-detail .category-transition {
+    aspect-ratio: 16 / 10;
+  }
+}
+
 @media (min-width: 900px) {
   .site-shell.has-menu-open {
     padding-right: calc(18px + clamp(300px, 28vw, 430px));
@@ -987,6 +998,13 @@ a:focus-visible {
   background: #000;
 }
 
+.fourth-wall-media-cell {
+  min-width: 0;
+  min-height: 0;
+  overflow: hidden;
+  background: #fff;
+}
+
 .fourth-wall-image {
   display: block;
   width: 100%;
@@ -997,17 +1015,17 @@ a:focus-visible {
 }
 
 .fourth-wall-image-motion {
-  transform: scale(1.04);
+  transform-origin: center;
   animation: fourth-wall-image-motion 5.2s ease-in-out infinite;
 }
 
 @keyframes fourth-wall-image-motion {
   0%,
   100% {
-    transform: scale(1.04) translate3d(0, 0, 0);
+    transform: translate3d(0, -1.2%, 0) rotate(-0.65deg);
   }
   50% {
-    transform: scale(1.09) translate3d(-1.5%, -1.2%, 0);
+    transform: translate3d(0, 1.2%, 0) rotate(0.65deg);
   }
 }
 
@@ -1101,7 +1119,7 @@ a:focus-visible {
 
 .detail-text-below {
   width: 100%;
-  margin: clamp(16px, 2cqw, 28px) 0 clamp(30px, 4cqw, 56px);
+  margin: 0 0 clamp(30px, 4cqw, 56px);
   padding: clamp(28px, 4cqw, 56px) clamp(22px, 6cqw, 84px);
   border-top: clamp(6px, 0.9cqw, 12px) solid var(--rebel-pink);
   background: var(--paper);
