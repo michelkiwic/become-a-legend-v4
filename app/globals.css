@@ -1127,7 +1127,7 @@ a:focus-visible {
   position: absolute;
   z-index: 31;
   top: clamp(6px, 0.62cqw, 10px);
-  right: calc(clamp(58px, 7.08cqw, 92px) + clamp(8px, 0.8cqw, 12px));
+  right: calc(clamp(58px, 7.08cqw, 92px) + clamp(16px, 1.6cqw, 24px));
   bottom: auto;
   left: auto;
   display: inline-flex;
@@ -1148,7 +1148,7 @@ a:focus-visible {
   text-transform: uppercase;
   text-align: center;
   white-space: nowrap;
-  transition: color 180ms ease, background-color 180ms ease, transform 180ms ease;
+  transition: color 180ms ease, background-color 180ms ease;
 }
 
 .detail-back:hover,
@@ -1156,7 +1156,6 @@ a:focus-visible {
   border-color: var(--rebel-pink);
   background: var(--rebel-pink);
   color: #fff;
-  transform: translate(4px, -4px);
 }
 
 @keyframes detail-page-in {
