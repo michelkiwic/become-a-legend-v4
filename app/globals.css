@@ -792,7 +792,7 @@ a:focus-visible {
   padding: clamp(10px, 1.23cqw, 16px);
   grid-template-rows: repeat(3, clamp(3px, 0.31cqw, 4px));
   row-gap: clamp(5px, 0.77cqw, 10px);
-  background: rgba(10, 10, 10, 0.88);
+  background: #000;
   backdrop-filter: blur(5px);
 }
 
@@ -1131,17 +1131,22 @@ a:focus-visible {
   bottom: auto;
   left: auto;
   display: inline-flex;
+  width: clamp(58px, 7.08cqw, 92px);
+  height: clamp(53px, 6.46cqw, 84px);
   align-items: center;
-  gap: 0.65em;
-  padding: 0.68em 0.85em;
+  justify-content: center;
+  gap: 0.25em;
+  padding: clamp(4px, 0.45cqw, 6px);
   border: 1px solid var(--paper);
   background: var(--ink);
   color: var(--paper);
   cursor: pointer;
-  font-size: clamp(0.78rem, 1.85cqw, 1.25rem);
+  font-size: clamp(0.58rem, 0.9cqw, 0.76rem);
   font-weight: 800;
-  letter-spacing: 0.1em;
+  line-height: 1.05;
+  letter-spacing: 0.04em;
   text-transform: uppercase;
+  text-align: center;
   transition: color 180ms ease, background-color 180ms ease, transform 180ms ease;
 }
 
