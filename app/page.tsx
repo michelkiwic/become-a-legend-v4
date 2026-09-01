@@ -402,6 +402,13 @@ export default function Home() {
   const activeCategory = categories.find((category) => category.id === activeId);
   const detailCategory = categories.find((category) => category.id === detailId);
   const activeDetailContent = detailId ? detailContent[detailId] : null;
+  const hasUnifiedDetail = Boolean(activeDetailContent && detailId !== "07");
+  const secondaryDetailImage =
+    detailId === "06"
+      ? fourthWallStill
+      : detailId === "08" || !detailCategory
+        ? "yoshi-moshi-logo.webp"
+        : detailCategory.closeup?.src ?? detailCategory.detailSrc;
 
   useEffect(() => {
     const updateInkWeight = () => {
@@ -539,7 +546,7 @@ export default function Home() {
     >
       <section className="model-section" id="model" aria-label="Interactive exhibition model">
         <div className="exhibition-layout">
-          <div className={`model-column${detailId === "06" ? " has-fourth-wall-detail" : ""}`}>
+          <div className={`model-column${hasUnifiedDetail ? " has-unified-detail" : ""}`}>
             <button
               className={`menu-toggle model-menu-toggle${menuOpen ? " is-open" : ""}`}
               type="button"
@@ -602,7 +609,7 @@ export default function Home() {
               <img src="yoshi-moshi-model.jpg" alt="" draggable={false} />
             </div>
           <div
-            className={`category-detail category-detail-${detailId}${detailCategory ? "" : " category-detail-information"}`}
+            className={`category-detail category-detail-${detailId}${detailCategory ? "" : " category-detail-information"}${detailId !== "07" ? " category-detail-unified" : ""}`}
             aria-labelledby="category-detail-title"
             key={detailId}
             role="button"
@@ -615,11 +622,20 @@ export default function Home() {
               }
             }}
           >
-            {detailId === "06" ? (
+            {detailId !== "07" ? (
               <div className="fourth-wall-layout">
                 <header className="fourth-wall-heading">
-                  <h1 className="detail-primary-title" id="category-detail-title">
-                    {activeDetailContent.title}
+                  <h1
+                    className={`detail-primary-title${detailId === "03" ? " detail-primary-title-pair" : ""}`}
+                    id="category-detail-title"
+                  >
+                    {detailId === "03" ? (
+                      <>
+                        <span>Yoshini</span>
+                        <span className="detail-title-plus">+</span>
+                        <span>Moshini</span>
+                      </>
+                    ) : activeDetailContent.title}
                   </h1>
                   <p className="detail-kicker">{activeDetailContent.kicker}</p>
                 </header>
@@ -632,17 +648,38 @@ export default function Home() {
                       draggable={false}
                     />
                   </div>
-                  <div className="fourth-wall-media-cell fourth-wall-media-cell-motion">
-                    <img
-                      className="fourth-wall-image fourth-wall-image-motion"
-                      src={fourthWallStill}
-                      alt="Zufällig ausgewähltes bewegtes Yoshi und Moshi Motiv"
-                      draggable={false}
-                    />
-                  </div>
+                  {detailCategory?.backgroundSrc ? (
+                    <div className="fourth-wall-media-cell detail-media-layered">
+                      <img
+                        className="fourth-wall-image detail-media-layer-background"
+                        src={detailCategory.backgroundSrc}
+                        alt={`Hintergrund der Kategorie ${detailCategory.name}`}
+                        draggable={false}
+                      />
+                      <img
+                        className={`detail-media-layer-cutout fourth-wall-image-motion${detailCategory.id === "05" ? " detail-media-layer-cutout-multiply" : ""}`}
+                        src={detailCategory.detailSrc}
+                        alt={detailCategory.closeup?.alt ?? `Figur der Kategorie ${detailCategory.name}`}
+                        draggable={false}
+                      />
+                    </div>
+                  ) : (
+                    <div className="fourth-wall-media-cell fourth-wall-media-cell-motion">
+                      <img
+                        className="fourth-wall-image fourth-wall-image-motion"
+                        src={secondaryDetailImage}
+                        alt={
+                          detailId === "06"
+                            ? "Zufällig ausgewähltes bewegtes Yoshi und Moshi Motiv"
+                            : detailCategory?.closeup?.alt ?? `${activeDetailContent.title} Motiv`
+                        }
+                        draggable={false}
+                      />
+                    </div>
+                  )}
                 </div>
               </div>
-            ) : detailId === "07" ? (
+            ) : (
               <div className="video-wall" aria-label="Zwölf bewegte Yoshi und Moshi Videos">
                 {videoWallClips.map((clip, index) => (
                   <video
@@ -659,65 +696,6 @@ export default function Home() {
                 ))}
                 <h1 className="video-wall-title" id="category-detail-title">Filme + Performances</h1>
               </div>
-            ) : (
-              <>
-                <div className="detail-copy">
-                  {activeDetailContent.number ? (
-                    <h1
-                      className={`detail-primary-title${detailId === "03" ? " detail-primary-title-pair" : ""}`}
-                      id="category-detail-title"
-                    >
-                      {detailId === "03" ? (
-                        <>
-                          <span>Yoshini</span>
-                          <span className="detail-title-plus">+</span>
-                          <span>Moshini</span>
-                        </>
-                      ) : activeDetailContent.title}
-                    </h1>
-                  ) : null}
-                  <p className="detail-kicker">{activeDetailContent.kicker}</p>
-                  {!activeDetailContent.number ? (
-                    <h1 id="category-detail-title">{activeDetailContent.title}</h1>
-                  ) : null}
-                  <div className="detail-text">
-                    {activeDetailContent.sections.map((section, sectionIndex) => (
-                      <section className="detail-text-section" key={`${detailId}-section-${sectionIndex}`}>
-                        {section.heading ? <h2>{section.heading}</h2> : null}
-                        {section.paragraphs?.map((paragraph, paragraphIndex) => (
-                          <p key={`${detailId}-paragraph-${sectionIndex}-${paragraphIndex}`}>{paragraph}</p>
-                        ))}
-                        {section.items ? (
-                          <ul>
-                            {section.items.map((item) => (
-                              <li key={item}>{item}</li>
-                            ))}
-                          </ul>
-                        ) : null}
-                      </section>
-                    ))}
-                  </div>
-                </div>
-
-                {detailCategory ? (
-                  <>
-                    {detailCategory.backgroundSrc ? (
-                      <img
-                        className="detail-background"
-                        src={detailCategory.backgroundSrc}
-                        alt={`Figuren der Kategorie ${detailCategory.name}`}
-                        draggable={false}
-                      />
-                    ) : null}
-                    <img
-                      className={`detail-cutout${detailCategory.id === "01" || detailCategory.id === "04" ? "" : " detail-cutout-white"}${detailCategory.backgroundSrc ? " detail-layered-cutout" : ""}`}
-                      src={detailCategory.detailSrc}
-                      alt={detailCategory.closeup?.alt ?? `Figur der Kategorie ${detailCategory.name}`}
-                      draggable={false}
-                    />
-                  </>
-                ) : null}
-              </>
             )}
 
             <button
@@ -732,8 +710,8 @@ export default function Home() {
             </button>
           </div>
           </div>
-          {detailId === "06" && isDetailOpen ? (
-            <article className="detail-text-below" aria-label="Text zu Die 4. Wand">
+          {detailId !== "07" && isDetailOpen ? (
+            <article className="detail-text-below" aria-label={`Text zu ${activeDetailContent.title}`}>
               {activeDetailContent.sections.map((section, sectionIndex) => (
                 <section className="detail-text-section" key={`below-${detailId}-section-${sectionIndex}`}>
                   {section.heading ? <h2>{section.heading}</h2> : null}

@@ -809,13 +809,13 @@ a:focus-visible {
   right: 14px;
 }
 
-.model-column.has-fourth-wall-detail .model-menu-toggle,
-.category-detail-06 .detail-back {
+.model-column.has-unified-detail .model-menu-toggle,
+.category-detail-unified .detail-back {
   top: clamp(18px, 1.7cqw, 26px);
 }
 
 @media (min-width: 761px) {
-  .model-column.has-fourth-wall-detail .category-transition {
+  .model-column.has-unified-detail .category-transition {
     aspect-ratio: 16 / 10;
   }
 }
@@ -1016,6 +1016,29 @@ a:focus-visible {
   display: grid;
   place-items: center;
   padding: clamp(18px, 3cqw, 38px) clamp(10px, 1.5cqw, 20px);
+}
+
+.detail-media-layered {
+  position: relative;
+}
+
+.detail-media-layer-background {
+  object-fit: cover;
+}
+
+.detail-media-layer-cutout {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  padding: clamp(14px, 2.2cqw, 28px);
+  object-fit: contain;
+  filter: drop-shadow(clamp(5px, 0.8cqw, 10px) clamp(5px, 0.8cqw, 10px) 0 rgba(10, 10, 10, 0.24));
+  user-select: none;
+}
+
+.detail-media-layer-cutout-multiply {
+  mix-blend-mode: multiply;
 }
 
 .fourth-wall-image {
