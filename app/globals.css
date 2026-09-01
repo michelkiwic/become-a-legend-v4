@@ -1125,19 +1125,20 @@ a:focus-visible {
 
 .detail-back {
   position: absolute;
-  z-index: 5;
-  right: auto;
-  bottom: 3%;
-  left: 3%;
+  z-index: 31;
+  top: clamp(6px, 0.62cqw, 10px);
+  right: calc(clamp(58px, 7.08cqw, 92px) + clamp(8px, 0.8cqw, 12px));
+  bottom: auto;
+  left: auto;
   display: inline-flex;
   align-items: center;
   gap: 0.65em;
-  padding: 0.72em 0.9em;
+  padding: 0.68em 0.85em;
   border: 1px solid var(--paper);
   background: var(--ink);
   color: var(--paper);
   cursor: pointer;
-  font-size: clamp(1.35rem, 3cqw, 2.35rem);
+  font-size: clamp(0.78rem, 1.85cqw, 1.25rem);
   font-weight: 800;
   letter-spacing: 0.1em;
   text-transform: uppercase;
@@ -2042,13 +2043,6 @@ a:focus-visible {
     right: -15%;
     bottom: -7%;
     height: 74%;
-  }
-
-  .detail-back {
-    top: auto;
-    right: auto;
-    bottom: 3%;
-    left: 4%;
   }
 
   .category-index {
