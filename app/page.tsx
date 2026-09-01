@@ -734,7 +734,6 @@ export default function Home() {
           </div>
           {detailId === "06" && isDetailOpen ? (
             <article className="detail-text-below" aria-label="Text zu Die 4. Wand">
-              <p className="detail-text-below-kicker">{activeDetailContent.kicker}</p>
               {activeDetailContent.sections.map((section, sectionIndex) => (
                 <section className="detail-text-section" key={`below-${detailId}-section-${sectionIndex}`}>
                   {section.heading ? <h2>{section.heading}</h2> : null}
