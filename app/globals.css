@@ -993,6 +993,7 @@ a:focus-visible {
 
 .fourth-wall-heading .detail-kicker {
   margin-bottom: 0;
+  padding-left: clamp(3px, 0.3cqw, 5px);
 }
 
 .fourth-wall-media {
