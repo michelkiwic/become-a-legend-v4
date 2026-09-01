@@ -581,6 +581,7 @@ export default function Home() {
             </nav>
 
         {activeDetailContent ? (
+          <>
           <div className={`category-transition${isDetailOpen ? " is-detail-open" : ""}`}>
             <div className="model-transition-panel" aria-hidden="true">
               <img src="yoshi-moshi-model.jpg" alt="" draggable={false} />
@@ -618,7 +619,7 @@ export default function Home() {
               </div>
             ) : (
               <>
-                <div className="detail-copy">
+                <div className={`detail-copy${detailId === "06" ? " detail-copy-title-only" : ""}`}>
                   {activeDetailContent.number ? (
                     <h1
                       className={`detail-primary-title${detailId === "03" ? " detail-primary-title-pair" : ""}`}
@@ -637,7 +638,7 @@ export default function Home() {
                   {!activeDetailContent.number ? (
                     <h1 id="category-detail-title">{activeDetailContent.title}</h1>
                   ) : null}
-                  <div className="detail-text">
+                  {detailId !== "06" ? <div className="detail-text">
                     {activeDetailContent.sections.map((section, sectionIndex) => (
                       <section className="detail-text-section" key={`${detailId}-section-${sectionIndex}`}>
                         {section.heading ? <h2>{section.heading}</h2> : null}
@@ -653,7 +654,7 @@ export default function Home() {
                         ) : null}
                       </section>
                     ))}
-                  </div>
+                  </div> : null}
                 </div>
 
                 {detailCategory ? (
@@ -689,6 +690,26 @@ export default function Home() {
             </button>
           </div>
           </div>
+          {detailId === "06" && isDetailOpen ? (
+            <article className="detail-text-below" aria-label="Text zu Die 4. Wand">
+              {activeDetailContent.sections.map((section, sectionIndex) => (
+                <section className="detail-text-section" key={`below-${detailId}-section-${sectionIndex}`}>
+                  {section.heading ? <h2>{section.heading}</h2> : null}
+                  {section.paragraphs?.map((paragraph, paragraphIndex) => (
+                    <p key={`below-${detailId}-paragraph-${sectionIndex}-${paragraphIndex}`}>{paragraph}</p>
+                  ))}
+                  {section.items ? (
+                    <ul>
+                      {section.items.map((item) => (
+                        <li key={item}>{item}</li>
+                      ))}
+                    </ul>
+                  ) : null}
+                </section>
+              ))}
+            </article>
+          ) : null}
+          </>
         ) : (
         <div
           className={`model-frame${activeCategory ? " has-active" : ""}`}
@@ -802,15 +823,6 @@ export default function Home() {
           </div>
         </div>
       </section>
-
-      <footer className="site-footer">
-        <a href="https://yoshi-moshi.com/" target="_blank" rel="noreferrer">
-          Yoshi + Moshi
-        </a>
-        <a href="https://ninastaehli.com/" target="_blank" rel="noreferrer">
-          Nina Staehli
-        </a>
-      </footer>
     </main>
     </>
   );
