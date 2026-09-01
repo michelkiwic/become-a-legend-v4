@@ -1037,10 +1037,6 @@ a:focus-visible {
   user-select: none;
 }
 
-.detail-media-layer-cutout-multiply {
-  mix-blend-mode: multiply;
-}
-
 .fourth-wall-image {
   display: block;
   width: 100%;

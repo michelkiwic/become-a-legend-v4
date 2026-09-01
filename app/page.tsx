@@ -641,17 +641,11 @@ export default function Home() {
                 </header>
                 <div className="fourth-wall-media">
                   {detailId === "05" && detailCategory?.backgroundSrc ? (
-                    <div className="fourth-wall-media-cell detail-media-layered">
+                    <div className="fourth-wall-media-cell">
                       <img
                         className="fourth-wall-image detail-media-layer-background"
                         src={detailCategory.backgroundSrc}
                         alt={`Hintergrund der Kategorie ${detailCategory.name}`}
-                        draggable={false}
-                      />
-                      <img
-                        className={`detail-media-layer-cutout fourth-wall-image-motion${detailCategory.id === "05" ? " detail-media-layer-cutout-multiply" : ""}`}
-                        src={detailCategory.detailSrc}
-                        alt={detailCategory.closeup?.alt ?? `Figur der Kategorie ${detailCategory.name}`}
                         draggable={false}
                       />
                     </div>
@@ -683,7 +677,7 @@ export default function Home() {
                         draggable={false}
                       />
                       <img
-                        className={`detail-media-layer-cutout fourth-wall-image-motion${detailCategory.id === "05" ? " detail-media-layer-cutout-multiply" : ""}`}
+                        className="detail-media-layer-cutout fourth-wall-image-motion"
                         src={detailCategory.detailSrc}
                         alt={detailCategory.closeup?.alt ?? `Figur der Kategorie ${detailCategory.name}`}
                         draggable={false}
