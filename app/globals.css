@@ -1142,14 +1142,12 @@ a:focus-visible {
 }
 
 .detail-text-below .detail-text-below-kicker {
-  width: 100%;
   max-width: 58em;
   margin: 0 auto clamp(18px, 2.4cqw, 30px);
   font-size: clamp(0.7rem, 1cqw, 0.82rem);
   font-weight: 900;
   letter-spacing: 0.16em;
   line-height: 1.2;
-  text-align: left;
   text-transform: uppercase;
 }
 

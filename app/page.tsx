@@ -146,7 +146,14 @@ const videoWallClips = videoWallClipOrder.map(
   (clipNumber) => `video-wall/clip-${String(clipNumber).padStart(2, "0")}.webm`,
 );
 
-const fourthWallStill = "closeup-u6.webp";
+const fourthWallStillImages = [
+  "closeup-u1.webp",
+  "closeup-u2.webp",
+  "closeup-u3.webp",
+  "closeup-u4-white.webp",
+  "closeup-u5-white.webp",
+  "closeup-u6.webp",
+];
 
 const detailContent: Record<string, DetailContent> = {
   "01": {
@@ -390,6 +397,7 @@ export default function Home() {
   const [detailId, setDetailId] = useState<string | null>(null);
   const [isDetailOpen, setIsDetailOpen] = useState(false);
   const [menuOpen, setMenuOpen] = useState(false);
+  const [fourthWallStill, setFourthWallStill] = useState(fourthWallStillImages[0]);
   const detailExitTimer = useRef<number | null>(null);
   const activeCategory = categories.find((category) => category.id === activeId);
   const detailCategory = categories.find((category) => category.id === detailId);
@@ -427,6 +435,11 @@ export default function Home() {
 
     setActiveId(id);
     setDetailId(id);
+    if (id === "06") {
+      setFourthWallStill(
+        fourthWallStillImages[Math.floor(Math.random() * fourthWallStillImages.length)],
+      );
+    }
     window.requestAnimationFrame(() => setIsDetailOpen(true));
   };
 
@@ -623,7 +636,7 @@ export default function Home() {
                     <img
                       className="fourth-wall-image fourth-wall-image-motion"
                       src={fourthWallStill}
-                      alt="Bewegtes Yoshi und Moshi Motiv"
+                      alt="Zufällig ausgewähltes bewegtes Yoshi und Moshi Motiv"
                       draggable={false}
                     />
                   </div>
