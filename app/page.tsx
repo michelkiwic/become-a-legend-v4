@@ -146,6 +146,15 @@ const videoWallClips = videoWallClipOrder.map(
   (clipNumber) => `video-wall/clip-${String(clipNumber).padStart(2, "0")}.webm`,
 );
 
+const fourthWallStillImages = [
+  "closeup-u1.webp",
+  "closeup-u2.webp",
+  "closeup-u3.webp",
+  "closeup-u4-white.webp",
+  "closeup-u5-white.webp",
+  "closeup-u6.webp",
+];
+
 const detailContent: Record<string, DetailContent> = {
   "01": {
     number: "01",
@@ -388,6 +397,7 @@ export default function Home() {
   const [detailId, setDetailId] = useState<string | null>(null);
   const [isDetailOpen, setIsDetailOpen] = useState(false);
   const [menuOpen, setMenuOpen] = useState(false);
+  const [fourthWallStill, setFourthWallStill] = useState(fourthWallStillImages[0]);
   const detailExitTimer = useRef<number | null>(null);
   const activeCategory = categories.find((category) => category.id === activeId);
   const detailCategory = categories.find((category) => category.id === detailId);
@@ -425,6 +435,11 @@ export default function Home() {
 
     setActiveId(id);
     setDetailId(id);
+    if (id === "06") {
+      setFourthWallStill(
+        fourthWallStillImages[Math.floor(Math.random() * fourthWallStillImages.length)],
+      );
+    }
     window.requestAnimationFrame(() => setIsDetailOpen(true));
   };
 
@@ -600,7 +615,30 @@ export default function Home() {
               }
             }}
           >
-            {detailId === "07" ? (
+            {detailId === "06" ? (
+              <div className="fourth-wall-layout">
+                <header className="fourth-wall-heading">
+                  <h1 className="detail-primary-title" id="category-detail-title">
+                    {activeDetailContent.title}
+                  </h1>
+                  <p className="detail-kicker">{activeDetailContent.kicker}</p>
+                </header>
+                <div className="fourth-wall-media">
+                  <img
+                    className="fourth-wall-image fourth-wall-image-motion"
+                    src="yoshi-moshi-model.jpg"
+                    alt="Das Yoshi und Moshi Ausstellungsmodell in Bewegung"
+                    draggable={false}
+                  />
+                  <img
+                    className="fourth-wall-image fourth-wall-image-still"
+                    src={fourthWallStill}
+                    alt="Zufällig ausgewähltes stilles Yoshi und Moshi Motiv"
+                    draggable={false}
+                  />
+                </div>
+              </div>
+            ) : detailId === "07" ? (
               <div className="video-wall" aria-label="Zwölf bewegte Yoshi und Moshi Videos">
                 {videoWallClips.map((clip, index) => (
                   <video
@@ -619,7 +657,7 @@ export default function Home() {
               </div>
             ) : (
               <>
-                <div className={`detail-copy${detailId === "06" ? " detail-copy-title-only" : ""}`}>
+                <div className="detail-copy">
                   {activeDetailContent.number ? (
                     <h1
                       className={`detail-primary-title${detailId === "03" ? " detail-primary-title-pair" : ""}`}
@@ -638,7 +676,7 @@ export default function Home() {
                   {!activeDetailContent.number ? (
                     <h1 id="category-detail-title">{activeDetailContent.title}</h1>
                   ) : null}
-                  {detailId !== "06" ? <div className="detail-text">
+                  <div className="detail-text">
                     {activeDetailContent.sections.map((section, sectionIndex) => (
                       <section className="detail-text-section" key={`${detailId}-section-${sectionIndex}`}>
                         {section.heading ? <h2>{section.heading}</h2> : null}
@@ -654,7 +692,7 @@ export default function Home() {
                         ) : null}
                       </section>
                     ))}
-                  </div> : null}
+                  </div>
                 </div>
 
                 {detailCategory ? (
