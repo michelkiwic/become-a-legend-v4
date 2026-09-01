@@ -141,9 +141,9 @@ const utilityCategories = [
   { id: "11", name: "Contacts", detailId: "contacts" },
 ];
 
-const videoWallClips = Array.from(
-  { length: 12 },
-  (_, index) => `video-wall/clip-${String(index + 1).padStart(2, "0")}.webm`,
+const videoWallClipOrder = [1, 2, 9, 4, 5, 6, 7, 8, 3, 10, 11, 12];
+const videoWallClips = videoWallClipOrder.map(
+  (clipNumber) => `video-wall/clip-${String(clipNumber).padStart(2, "0")}.webm`,
 );
 
 const detailContent: Record<string, DetailContent> = {
