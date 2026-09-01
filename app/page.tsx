@@ -640,15 +640,41 @@ export default function Home() {
                   <p className="detail-kicker">{activeDetailContent.kicker}</p>
                 </header>
                 <div className="fourth-wall-media">
-                  <div className="fourth-wall-media-cell">
-                    <img
-                      className="fourth-wall-image fourth-wall-image-still"
-                      src="yoshi-moshi-model.jpg"
-                      alt="Das Yoshi und Moshi Ausstellungsmodell"
-                      draggable={false}
-                    />
-                  </div>
-                  {detailCategory?.backgroundSrc ? (
+                  {detailId === "05" && detailCategory?.backgroundSrc ? (
+                    <div className="fourth-wall-media-cell detail-media-layered">
+                      <img
+                        className="fourth-wall-image detail-media-layer-background"
+                        src={detailCategory.backgroundSrc}
+                        alt={`Hintergrund der Kategorie ${detailCategory.name}`}
+                        draggable={false}
+                      />
+                      <img
+                        className={`detail-media-layer-cutout fourth-wall-image-motion${detailCategory.id === "05" ? " detail-media-layer-cutout-multiply" : ""}`}
+                        src={detailCategory.detailSrc}
+                        alt={detailCategory.closeup?.alt ?? `Figur der Kategorie ${detailCategory.name}`}
+                        draggable={false}
+                      />
+                    </div>
+                  ) : (
+                    <div className="fourth-wall-media-cell">
+                      <img
+                        className="fourth-wall-image fourth-wall-image-still"
+                        src="yoshi-moshi-model.jpg"
+                        alt="Das Yoshi und Moshi Ausstellungsmodell"
+                        draggable={false}
+                      />
+                    </div>
+                  )}
+                  {detailId === "05" && detailCategory ? (
+                    <div className="fourth-wall-media-cell fourth-wall-media-cell-motion">
+                      <img
+                        className="fourth-wall-image fourth-wall-image-motion"
+                        src={detailCategory.detailSrc}
+                        alt={detailCategory.closeup?.alt ?? "Bewegtes Publikum-Motiv"}
+                        draggable={false}
+                      />
+                    </div>
+                  ) : detailCategory?.backgroundSrc ? (
                     <div className="fourth-wall-media-cell detail-media-layered">
                       <img
                         className="fourth-wall-image detail-media-layer-background"
