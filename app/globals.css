@@ -796,12 +796,6 @@ a:focus-visible {
   top: clamp(24px, 2.3cqw, 32px);
 }
 
-@media (min-width: 761px) {
-  .model-column.has-unified-detail .category-transition {
-    aspect-ratio: 16 / 10;
-  }
-}
-
 @media (min-width: 900px) {
   .site-shell.has-menu-open {
     padding-right: calc(18px + clamp(300px, 28vw, 430px));
@@ -849,6 +843,7 @@ a:focus-visible {
 .model-transition-panel {
   z-index: 1;
   transform: translateX(0);
+  pointer-events: none;
 }
 
 .model-transition-panel img {
@@ -863,10 +858,6 @@ a:focus-visible {
   aspect-ratio: auto;
   animation: none;
   transform: translateX(105%);
-}
-
-.category-transition.is-detail-open .model-transition-panel {
-  transform: translateX(-105%);
 }
 
 .category-transition.is-detail-open .category-detail {

@@ -590,9 +590,13 @@ export default function Home() {
 
         {activeDetailContent ? (
           <>
-          <div className={`category-transition${isDetailOpen ? " is-detail-open" : ""}`}>
+            <div className={`category-transition${isDetailOpen ? " is-detail-open" : ""}`}>
             <div className="model-transition-panel" aria-hidden="true">
               <img src="yoshi-moshi-model-stage-light.png" alt="" draggable={false} />
+              <div className="model-main-title">
+                BECOME A<br />
+                LEGEND
+              </div>
             </div>
           <div
             className={`category-detail category-detail-${detailId}${detailCategory ? "" : " category-detail-information"}${detailId !== "07" ? " category-detail-unified" : ""}`}
