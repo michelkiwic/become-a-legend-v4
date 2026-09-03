@@ -636,7 +636,7 @@ export default function Home() {
                   <p className="detail-kicker">{activeDetailContent.kicker}</p>
                 </header>
                 <div className="fourth-wall-media">
-                  {detailId === "05" && detailCategory?.backgroundSrc ? (
+                  {(detailId === "04" || detailId === "05") && detailCategory?.backgroundSrc ? (
                     <div className="fourth-wall-media-cell">
                       <img
                         className="fourth-wall-image detail-media-layer-background"
@@ -661,6 +661,15 @@ export default function Home() {
                         className="fourth-wall-image fourth-wall-image-motion"
                         src={detailCategory.detailSrc}
                         alt={detailCategory.closeup?.alt ?? "Animated audience image"}
+                        draggable={false}
+                      />
+                    </div>
+                  ) : detailId === "04" && detailCategory ? (
+                    <div className="fourth-wall-media-cell fourth-wall-media-cell-motion">
+                      <img
+                        className="fourth-wall-image fourth-wall-image-motion"
+                        src={detailCategory.detailSrc}
+                        alt={detailCategory.closeup?.alt ?? "Animated ensemble image"}
                         draggable={false}
                       />
                     </div>
