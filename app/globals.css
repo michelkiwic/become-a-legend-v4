@@ -801,6 +801,10 @@ a:focus-visible {
   .model-column.has-unified-detail .category-transition {
     aspect-ratio: 15 / 8;
   }
+
+  .model-column.has-unified-detail.has-detail .model-frame {
+    aspect-ratio: 15 / 8;
+  }
 }
 
 @media (min-width: 900px) {
