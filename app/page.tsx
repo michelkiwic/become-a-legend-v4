@@ -766,6 +766,9 @@ export default function Home() {
             alt="Yoshi and Moshi presenting a miniature exhibition model with eight exhibition categories"
             draggable={false}
           />
+          <div className="model-main-title" aria-label="Become a Legend">
+            BECOME A LEGEND
+          </div>
 
           <button
             className="funded-button"

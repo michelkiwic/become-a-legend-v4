@@ -1352,6 +1352,36 @@ a:focus-visible {
   transform: none;
 }
 
+.model-main-title {
+  position: absolute;
+  z-index: 5;
+  top: 13%;
+  left: 50%;
+  width: min(44%, 26rem);
+  color: var(--rebel-pink);
+  font-size: clamp(1rem, 2.85cqw, 3rem);
+  font-weight: 900;
+  letter-spacing: -0.08em;
+  line-height: 0.86;
+  text-align: center;
+  text-shadow: 2px 3px 0 rgba(10, 10, 10, 0.92);
+  text-transform: uppercase;
+  transform: translate(-50%, -50%) rotate(-1deg);
+  animation: model-main-title-drift 4.8s ease-in-out infinite;
+  pointer-events: none;
+  user-select: none;
+}
+
+@keyframes model-main-title-drift {
+  0%,
+  100% {
+    transform: translate(-50%, -50%) rotate(-1deg);
+  }
+  50% {
+    transform: translate(-50%, calc(-50% - 4px)) rotate(1deg);
+  }
+}
+
 .funded-button {
   position: absolute;
   z-index: 4;
