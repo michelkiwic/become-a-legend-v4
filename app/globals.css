@@ -1148,6 +1148,7 @@ a:focus-visible {
 .detail-text-below {
   position: relative;
   z-index: 2;
+  animation: detail-text-slide-in 720ms cubic-bezier(0.22, 1, 0.36, 1) both;
   width: 100%;
   margin: 0 0 clamp(30px, 4cqw, 56px);
   padding: clamp(28px, 4cqw, 56px) clamp(22px, 6cqw, 84px);
@@ -1157,6 +1158,11 @@ a:focus-visible {
   color: var(--ink);
   font-size: clamp(0.9rem, 1.3cqw, 1.08rem);
   line-height: 1.62;
+}
+
+@keyframes detail-text-slide-in {
+  from { transform: translateX(105%); }
+  to { transform: translateX(0); }
 }
 
 .detail-text-below > .detail-text-section {
