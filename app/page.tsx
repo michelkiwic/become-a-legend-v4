@@ -726,7 +726,19 @@ export default function Home() {
           </div>
           </div>
           {detailId !== "07" && isDetailOpen ? (
-            <article className="detail-text-below" aria-label={`Text for ${activeDetailContent.title}`}>
+            <article
+              className="detail-text-below"
+              aria-label={`Text for ${activeDetailContent.title}`}
+              role="button"
+              tabIndex={0}
+              onClick={returnToModel}
+              onKeyDown={(event) => {
+                if (event.key === "Enter" || event.key === " ") {
+                  event.preventDefault();
+                  returnToModel();
+                }
+              }}
+            >
               {activeDetailContent.sections.map((section, sectionIndex) => (
                 <section className="detail-text-section" key={`below-${detailId}-section-${sectionIndex}`}>
                   {section.heading ? <h2>{section.heading}</h2> : null}
