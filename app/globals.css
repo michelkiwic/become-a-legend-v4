@@ -1127,7 +1127,7 @@ a:focus-visible {
 .detail-text-below {
   width: 100%;
   margin: 0 0 clamp(30px, 4cqw, 56px);
-  padding: clamp(14px, 1.8cqw, 24px) clamp(22px, 6cqw, 84px) clamp(28px, 4cqw, 56px);
+  padding: clamp(28px, 4cqw, 56px) clamp(22px, 6cqw, 84px);
   border-top: clamp(6px, 0.9cqw, 12px) solid var(--rebel-pink);
   background: var(--paper);
   box-shadow: clamp(8px, 2cqw, 24px) clamp(8px, 2cqw, 24px) 0 rgba(10, 10, 10, 0.96);
