@@ -546,7 +546,7 @@ export default function Home() {
     >
       <section className="model-section" id="model" aria-label="Interactive exhibition model">
         <div className="exhibition-layout">
-          <div className={`model-column${hasUnifiedDetail ? " has-unified-detail" : ""}${activeDetailContent ? " has-detail" : ""}`}>
+          <div className={`model-column${hasUnifiedDetail ? " has-unified-detail" : ""}`}>
             <button
               className={`menu-toggle model-menu-toggle${menuOpen ? " is-open" : ""}`}
               type="button"
@@ -761,7 +761,7 @@ export default function Home() {
             </article>
           ) : null}
           </>
-        ) : null}
+        ) : (
         <div
           className={`model-frame${activeCategory ? " has-active" : ""}`}
           onMouseLeave={() => setActiveId(null)}
@@ -873,6 +873,7 @@ export default function Home() {
           />
 
         </div>
+        )}
 
           </div>
         </div>

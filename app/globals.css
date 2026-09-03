@@ -829,7 +829,6 @@ a:focus-visible {
 
 .category-transition {
   position: relative;
-  z-index: 1;
   width: 100%;
   aspect-ratio: 4 / 3;
   overflow: hidden;
@@ -858,20 +857,6 @@ a:focus-visible {
   width: 100%;
   height: 100%;
   object-fit: cover;
-  object-position: center top;
-}
-
-.model-transition-panel .model-main-title {
-  top: 14.0625%;
-}
-
-.model-column.has-detail .model-frame {
-  position: absolute;
-  z-index: 0;
-  top: 0;
-  left: 0;
-  width: 100%;
-  pointer-events: none;
 }
 
 .category-transition .category-detail {
