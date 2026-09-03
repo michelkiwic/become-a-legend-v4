@@ -776,7 +776,7 @@ a:focus-visible {
 .model-menu-toggle {
   position: absolute;
   z-index: 32;
-  top: clamp(6px, 0.62cqw, 10px);
+  top: clamp(24px, 2.3cqw, 32px);
   right: clamp(6px, 0.62cqw, 10px);
   width: clamp(58px, 7.08cqw, 92px);
   height: clamp(53px, 6.46cqw, 84px);
