@@ -760,6 +760,7 @@ a:focus-visible {
   position: relative;
   width: min(100%, calc((100svh - 72px) * 4 / 3));
   margin: 0 auto;
+  overflow: hidden;
   container-type: inline-size;
   container-name: model-stage;
 }
