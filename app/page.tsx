@@ -729,9 +729,9 @@ export default function Home() {
             </button>
           </div>
           </div>
-          {detailId !== "07" && isDetailOpen ? (
+          {detailId !== "07" && activeDetailContent ? (
             <article
-              className="detail-text-below"
+              className={`detail-text-below${isDetailOpen ? "" : " is-closing"}`}
               aria-label={`Text for ${activeDetailContent.title}`}
               role="button"
               tabIndex={0}
