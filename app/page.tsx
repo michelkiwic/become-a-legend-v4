@@ -566,8 +566,7 @@ export default function Home() {
                 type="button"
                 onClick={returnToModel}
               >
-                <span>Become a Legend</span>
-                <strong>Yoshi + Moshi</strong>
+                <span>BECOME A LEGEND</span>
               </button>
               {categories.map((category) => (
                 <a
@@ -578,7 +577,6 @@ export default function Home() {
                     setMenuOpen(false);
                   }}
                 >
-                  <span>{category.id}</span>
                   <strong>{category.name}</strong>
                 </a>
               ))}
@@ -592,7 +590,6 @@ export default function Home() {
                     showDetail(category.detailId);
                   }}
                 >
-                  <span>{category.id}</span>
                   <strong>{category.name}</strong>
                 </a>
               ))}
