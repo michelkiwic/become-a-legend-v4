@@ -1355,11 +1355,11 @@ a:focus-visible {
 .model-main-title {
   position: absolute;
   z-index: 5;
-  top: 13%;
+  top: 10%;
   left: 50%;
-  width: min(44%, 26rem);
+  width: min(54%, 32rem);
   color: var(--rebel-pink);
-  font-size: clamp(1rem, 2.85cqw, 3rem);
+  font-size: clamp(1.15rem, 3.4cqw, 3.6rem);
   font-weight: 900;
   letter-spacing: -0.08em;
   line-height: 0.86;
