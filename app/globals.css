@@ -35,6 +35,7 @@
 
 html {
   background: var(--ink);
+  scrollbar-gutter: stable;
   scroll-behavior: smooth;
 }
 
