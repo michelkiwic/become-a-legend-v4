@@ -769,7 +769,8 @@ export default function Home() {
             draggable={false}
           />
           <div className="model-main-title" aria-label="Become a Legend">
-            BECOME A LEGEND
+            BECOME A<br />
+            LEGEND
           </div>
 
           <button
