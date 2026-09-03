@@ -796,6 +796,12 @@ a:focus-visible {
   top: clamp(24px, 2.3cqw, 32px);
 }
 
+@media (min-width: 761px) {
+  .model-column.has-unified-detail .category-transition {
+    aspect-ratio: 15 / 8;
+  }
+}
+
 @media (min-width: 900px) {
   .site-shell.has-menu-open {
     padding-right: calc(18px + clamp(300px, 28vw, 430px));
