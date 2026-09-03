@@ -802,7 +802,7 @@ a:focus-visible {
 
 .model-column.has-unified-detail .model-menu-toggle,
 .category-detail-unified .detail-back {
-  top: clamp(18px, 1.7cqw, 26px);
+  top: clamp(24px, 2.3cqw, 32px);
 }
 
 @media (min-width: 761px) {
