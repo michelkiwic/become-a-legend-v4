@@ -1275,7 +1275,7 @@ a:focus-visible {
 .detail-back {
   position: absolute;
   z-index: 31;
-  top: clamp(6px, 0.62cqw, 10px);
+  top: clamp(24px, 2.3cqw, 32px);
   right: calc(clamp(58px, 7.08cqw, 92px) + clamp(16px, 1.6cqw, 24px));
   bottom: auto;
   left: auto;
