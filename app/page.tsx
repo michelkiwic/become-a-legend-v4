@@ -69,7 +69,7 @@ const categories: Category[] = [
   },
   {
     id: "04",
-    name: "DAS ENSEMBLE",
+    name: "THE ENSEMBLE",
     point: { x: 74, y: 66.6 },
     detailSrc: "closeup-u4-cutout.png",
     backgroundSrc: "ensemble-background.jpg",
@@ -86,7 +86,7 @@ const categories: Category[] = [
   },
   {
     id: "05",
-    name: "DAS PUBLIKUM",
+    name: "THE AUDIENCE",
     point: { x: 61.2, y: 69.4 },
     detailSrc: "closeup-u5-white.webp",
     backgroundSrc: "audience-background.webp",
@@ -103,7 +103,7 @@ const categories: Category[] = [
   },
   {
     id: "06",
-    name: "DIE 4. WAND",
+    name: "THE 4TH WALL",
     point: { x: 61.8, y: 51.5 },
     detailSrc: "yoshi-moshi-model.jpg",
     outline:
@@ -113,7 +113,7 @@ const categories: Category[] = [
   },
   {
     id: "07",
-    name: "FILME + PERFORMANCES",
+    name: "FILMS + PERFORMANCES",
     point: { x: 49.2, y: 53.2 },
     detailSrc: "yoshi-moshi-model.jpg",
     outline:
@@ -137,7 +137,7 @@ const categories: Category[] = [
 
 const utilityCategories = [
   { id: "09", name: "Finances", detailId: "finances" },
-  { id: "10", name: "Inventar", detailId: "inventory" },
+  { id: "10", name: "Inventory", detailId: "inventory" },
   { id: "11", name: "Contacts", detailId: "contacts" },
 ];
 
@@ -202,7 +202,7 @@ const detailContent: Record<string, DetailContent> = {
   "04": {
     number: "04",
     kicker: "Less me = more us",
-    title: "Das Ensemble",
+    title: "The Ensemble",
     sections: [
       {
         paragraphs: [
@@ -216,7 +216,7 @@ const detailContent: Record<string, DetailContent> = {
   "05": {
     number: "05",
     kicker: "No audience = no story",
-    title: "Das Publikum",
+    title: "The Audience",
     sections: [
       {
         paragraphs: [
@@ -229,7 +229,7 @@ const detailContent: Record<string, DetailContent> = {
   "06": {
     number: "06",
     kicker: "You look = they look",
-    title: "Die 4. Wand",
+    title: "The 4th Wall",
     sections: [
       {
         paragraphs: [
@@ -242,7 +242,7 @@ const detailContent: Record<string, DetailContent> = {
   "07": {
     number: "07",
     kicker: "No words = full story",
-    title: "Filme & Performances",
+    title: "Films + Performances",
     sections: [
       {
         paragraphs: [
@@ -268,7 +268,7 @@ const detailContent: Record<string, DetailContent> = {
         ],
       },
       {
-        heading: "Literarische Bezüge",
+        heading: "Literary References",
         items: [
           "Gustave Flaubert",
           "Jorge Luis Borges",
@@ -279,34 +279,34 @@ const detailContent: Record<string, DetailContent> = {
         ],
       },
       {
-        heading: "Nina Staehlis Beziehung zu Yoshi + Moshi",
+        heading: "Nina Staehli's Relationship with Yoshi + Moshi",
       },
       {
-        heading: "Erste Begegnung",
+        heading: "First Encounter",
         paragraphs: [
           "2012 erschienen Yoshi + Moshi zum ersten Mal in meinem Atelier. Damals wusste ich nicht, dass sie eines Tages ihre eigene Geschichte schreiben würden. Ich wusste nicht einmal, wer sie waren. Ich wusste nur, dass sie da waren. Sie gehörten zu den ersten Big Heads. Zu jenen Wesen, die weder Mensch noch Figur, weder Maske noch Porträt sind. Sie waren einfach anwesend. Mit grossen Augen und offenen Mündern. Mit einem Blick, als wäre gerade eben etwas geschehen. Bis heute glaube ich, dass genau darin ihr Ursprung liegt. Yoshi + Moshi staunen nicht über etwas Bestimmtes. Sie staunen über die Welt selbst. Lange bevor wir Begriffe finden, Urteile fällen oder Antworten formulieren, staunen wir. Vielleicht beginnt jede Erkenntnis genau dort. Mich interessiert dieses Staunen bis heute mehr als jede Gewissheit.",
         ],
       },
       {
-        heading: "Stille Sprache",
+        heading: "Silent Language",
         paragraphs: [
           "Deshalb sprechen Yoshi + Moshi nicht. Nicht, weil sie schweigen möchten. Nicht, weil sie Sprache verweigern würden. Sprache gehört schlicht nicht zu ihrer Existenz. Sie brauchen keine Worte, weil sie aus einem anderen Raum kommen. Ihre Welt entsteht aus Blicken, Gesten, Materialien, Berührungen, Bewegungen und Atmosphären. Das Schweigen ist keine Leerstelle, sondern ihre Sprache. In einer Zeit, in der beinahe alles erklärt, kommentiert und interpretiert wird, interessieren mich Räume, die offen bleiben. Räume, in denen Bedeutung nicht geliefert wird, sondern entsteht. Yoshi + Moshi erzählen deshalb keine Geschichten. Sie eröffnen Möglichkeiten und so wird der/die Betrachter*in zum/zur Mitautor*in. Vielleicht liegt genau darin ihre Nähe zur Literatur. Nicht zu Geschichten mit Anfang und Ende, sondern zu jener Literatur, die mehr fragt als antwortet. Flaubert träumte von einem Buch, das allein durch seine innere Kraft bestehen könnte. Beckett führte seine Figuren an die Grenze des Sagbaren. Wittgenstein erinnerte daran, dass dort, wo Sprache endet, nicht das Denken endet, und Roland Barthes verstand das Werk erst im Blick seines Lesers als vollendet. Diese Gedanken begleiten mich seit vielen Jahren als stille Weggefährten. Yoshi + Moshi erklären keine Philosophie, sie zitieren keine Literatur, aber sie bewegen sich in denselben Zwischenräumen. Genau dort, wo Sprache endet und Erfahrungen beginnen.",
         ],
       },
       {
-        heading: "Poetische Räume",
+        heading: "Poetic Spaces",
         paragraphs: [
           "Mich interessiert seit jeher das Poetische. Nicht nur als literarische Gattung, sondern als Form des Wahrnehmens. Poesie beginnt dort, wo die Welt wieder geheimnisvoll wird. Dort, wo wir Dinge nicht sofort benennen müssen. Wo wir bereit sind, etwas auszuhalten, das sich unserer Kontrolle entzieht. Vielleicht ist genau das heute wichtiger denn je. Wir leben in einer Zeit, in der Wissen unendlich verfügbar scheint. Das grosse Versprechen auf Erkenntnis hat sich von den Büchern zunehmend auf die künstliche Intelligenz verlagert. Oft entsteht der Eindruck, Maschinen könnten eines Tages alles verstehen und für uns lösen. Künstliche Intelligenz ersetzt den Menschen nicht, sie verschiebt Kompetenzen, Wissen und Verantwortung. Gerade deshalb erscheint mir das Analoge heute nicht als nostalgische Gegenbewegung, sondern als Erinnerung an etwas, das niemals vollständig digital werden kann: Berührung, Material, Haptik, Zeit, Präsenz und Gewicht. Oder anders gesagt: die Aura eines Gegenübers. Yoshi + Moshi und ihr Kosmos sind ausnahmslos analog entstanden. Jede Puppe, Skulptur, Malerei und Oberfläche trägt Spuren von Händen. Kleine Unregelmässigkeiten, Widerstände und Zufälle. Alles, was sich einer vollkommenen Glättung entzieht und einer Schönheit, die sich nicht vollständig übersetzen lässt.",
         ],
       },
       {
-        heading: "Offene Welten",
+        heading: "Open Worlds",
         paragraphs: [
           "Vielleicht haben wir in den letzten zwanzig Jahren unzählige Bäume auf Bildschirmen betrachtet und gleichzeitig vergessen, wie sich eine Baumrinde anfühlt und wie sie riecht. Yoshi + Moshi erinnern deshalb nicht an eine Vergangenheit, sondern an sinnliche Erfahrungen. Ihre Welt besteht aus Puppen, Skulpturen, Videos, Performances und Malereien. Auch das ist kein Zufall. Kinder entdecken die Welt spielend. Sie erschaffen Figuren, geben ihnen Stimmen, lassen sie sterben, wiederauferstehen und neue Welten bauen. Im Spiel entstehen Identitäten und Legenden. Yoshi + Moshi bauen sich selbst nach. Sie erschaffen Abbilder ihrer eigenen Existenz und sie spielen mit sich selbst. Mich interessiert dieser Moment, weil er gleichzeitig zutiefst menschlich und absurd ist. Das Spiel wird zum Spiegel unserer Gegenwart. Einer Zeit, die sich unablässig selbst betrachtet, dokumentiert und neu erfindet. Yoshi + Moshi beobachten diese Welt mit Zärtlichkeit und feiner Ironie.",
         ],
       },
       {
-        heading: "Eigene Legenden",
+        heading: "Legends of Their Own",
         paragraphs: [
           "Über die Jahre haben Yoshi und Moshi begonnen, sich von mir zu lösen. Anfangs habe ich sie erschaffen und heute habe ich manchmal das Gefühl, dass sie mich erschaffen haben. Sie entwickelten ihre eigene Mythologie, eigene Regeln und Rituale. So als hätte ich ihnen irgendwann die Tür geöffnet und sie wären einfach hinausgegangen. Heute reisen sie als Künstler, Performer und Puppenspieler durch die Welt. Sie behaupten nicht, Legenden werden zu wollen – sie verkörpern diese bereits. Deshalb trägt diese Ausstellung den Titel Become A Legend; die Aufforderung richtet sich nicht an Yoshi + Moshi, sondern an uns Menschen. Im Zentrum der Installation steht nicht Ruhm, sondern die Wahrnehmung. Sie eröffnet einen Raum für Staunen, Spiel und die Bereitschaft, dem eigenen Blick zu vertrauen und sich berühren zu lassen.",
         ],
@@ -315,7 +315,7 @@ const detailContent: Record<string, DetailContent> = {
   },
   finances: {
     kicker: "Big vision = shared costs",
-    title: "Finanzierung",
+    title: "Funding",
     sections: [
       {
         paragraphs: [
@@ -340,10 +340,10 @@ const detailContent: Record<string, DetailContent> = {
   },
   inventory: {
     kicker: "Become a Legend / Inventory",
-    title: "Inventar",
+    title: "Inventory",
     sections: [
       {
-        heading: "Skulpturen",
+        heading: "Sculptures",
         items: [
           "Yoshini & Moshini",
           "Ensemble-Skulpturen",
@@ -641,7 +641,7 @@ export default function Home() {
                       <img
                         className="fourth-wall-image detail-media-layer-background"
                         src={detailCategory.backgroundSrc}
-                        alt={`Hintergrund der Kategorie ${detailCategory.name}`}
+                        alt={`Background for ${detailCategory.name}`}
                         draggable={false}
                       />
                     </div>
@@ -650,7 +650,7 @@ export default function Home() {
                       <img
                         className="fourth-wall-image fourth-wall-image-still"
                         src="yoshi-moshi-model.jpg"
-                        alt="Das Yoshi und Moshi Ausstellungsmodell"
+                        alt="Yoshi and Moshi exhibition model"
                         draggable={false}
                       />
                     </div>
@@ -660,7 +660,7 @@ export default function Home() {
                       <img
                         className="fourth-wall-image fourth-wall-image-motion"
                         src={detailCategory.detailSrc}
-                        alt={detailCategory.closeup?.alt ?? "Bewegtes Publikum-Motiv"}
+                        alt={detailCategory.closeup?.alt ?? "Animated audience image"}
                         draggable={false}
                       />
                     </div>
@@ -669,13 +669,13 @@ export default function Home() {
                       <img
                         className="fourth-wall-image detail-media-layer-background"
                         src={detailCategory.backgroundSrc}
-                        alt={`Hintergrund der Kategorie ${detailCategory.name}`}
+                        alt={`Background for ${detailCategory.name}`}
                         draggable={false}
                       />
                       <img
                         className="detail-media-layer-cutout fourth-wall-image-motion"
                         src={detailCategory.detailSrc}
-                        alt={detailCategory.closeup?.alt ?? `Figur der Kategorie ${detailCategory.name}`}
+                        alt={detailCategory.closeup?.alt ?? `Figure for ${detailCategory.name}`}
                         draggable={false}
                       />
                     </div>
@@ -686,8 +686,8 @@ export default function Home() {
                         src={secondaryDetailImage}
                         alt={
                           detailId === "06"
-                            ? "Zufällig ausgewähltes bewegtes Yoshi und Moshi Motiv"
-                            : detailCategory?.closeup?.alt ?? `${activeDetailContent.title} Motiv`
+                            ? "Random animated Yoshi and Moshi image"
+                            : detailCategory?.closeup?.alt ?? `${activeDetailContent.title} image`
                         }
                         draggable={false}
                       />
@@ -696,13 +696,13 @@ export default function Home() {
                 </div>
               </div>
             ) : (
-              <div className="video-wall" aria-label="Zwölf bewegte Yoshi und Moshi Videos">
+              <div className="video-wall" aria-label="Twelve animated Yoshi and Moshi videos">
                 {videoWallClips.map((clip, index) => (
                   <video
                     className="video-wall-clip"
                     src={clip}
                     key={clip}
-                    aria-label={`Yoshi und Moshi Video ${index + 1}`}
+                    aria-label={`Yoshi and Moshi video ${index + 1}`}
                     autoPlay
                     loop
                     muted
@@ -710,7 +710,7 @@ export default function Home() {
                     preload="auto"
                   />
                 ))}
-                <h1 className="video-wall-title" id="category-detail-title">Filme + Performances</h1>
+                <h1 className="video-wall-title" id="category-detail-title">Films + Performances</h1>
               </div>
             )}
 
@@ -727,7 +727,7 @@ export default function Home() {
           </div>
           </div>
           {detailId !== "07" && isDetailOpen ? (
-            <article className="detail-text-below" aria-label={`Text zu ${activeDetailContent.title}`}>
+            <article className="detail-text-below" aria-label={`Text for ${activeDetailContent.title}`}>
               {activeDetailContent.sections.map((section, sectionIndex) => (
                 <section className="detail-text-section" key={`below-${detailId}-section-${sectionIndex}`}>
                   {section.heading ? <h2>{section.heading}</h2> : null}
@@ -761,7 +761,7 @@ export default function Home() {
           <button
             className="funded-button"
             type="button"
-            aria-label="Fully funded – Finances öffnen"
+            aria-label="Fully funded – Open finances"
             onClick={() => showDetail("finances")}
           >
             <span className="funded-button-face">Fully funded!</span>
@@ -779,7 +779,7 @@ export default function Home() {
             type="button"
             onClick={() => showDetail("inventory")}
           >
-            Inventar
+            Inventory
           </button>
           <button
             className="model-footer-action model-footer-contacts"
