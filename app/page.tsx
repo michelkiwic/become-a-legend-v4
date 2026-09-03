@@ -561,13 +561,6 @@ export default function Home() {
             </button>
 
             <nav className={`site-menu${menuOpen ? " is-open" : ""}`} id="site-menu" aria-label="Exhibition menu">
-              <button
-                className="site-menu-heading"
-                type="button"
-                onClick={returnToModel}
-              >
-                <span>BECOME A LEGEND</span>
-              </button>
               {categories.map((category) => (
                 <a
                   href="#model"
